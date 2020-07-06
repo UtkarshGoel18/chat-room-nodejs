@@ -4,6 +4,7 @@ const socketio = require('socket.io')
 const app = express()
 const Filter=require('bad-words')
 
+const port =process.env.PORT || 3000
 const path = require('path')
 
 const {generateMessage , generateLocationMessage}=require('./utils/messages')
@@ -70,6 +71,6 @@ io.on('connection', (socket)=>{
 
 
  
-server.listen(3000,()=>{
+server.listen(port,()=>{
     console.log('Listeing on port 3000')
 })
